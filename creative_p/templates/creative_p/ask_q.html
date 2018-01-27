@@ -1,0 +1,90 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Froala Design Blocks - Features</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+
+  <script src="http://localhost:35729/livereload.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+  <link type="text/css" rel="stylesheet" href="{% static 'css/froala_blocks.css' %}">
+
+  <style>
+    .fdb-block {
+      border-bottom: solid 1px #EEE;
+    }
+  </style>
+</head>
+
+<body>
+<header class="bg-dark">
+    <div class="container">
+      <nav class="navbar navbar-expand-md">
+        <a class="navbar-brand" href="https://www.froala.com">
+          <img src="./imgs/img_logo.png" height="30" alt="image">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav11" aria-controls="navbarNav11" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav11">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://www.froala.com">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ask">Ask </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.froala.com">Answer </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.froala.com">View</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.froala.com">About</a>
+            </li>
+          </ul>
+
+          <a class="btn btn-white btn-empty ml-md-3" href="https://www.froala.com">Button</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+<section class="fdb-block" style="background-image: url(static/imgs/bg_c_2.svg);">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-12 col-md-9 col-lg-8">
+          <div class="fdb-box fdb-touch">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10">
+                <h1>Subscribe</h1>
+                <p class="text-h3">When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove.</p>
+              </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+              <div class="col-12 col-lg-10">
+                <div class="input-group">
+                  <!--<input type="text" class="form-control" placeholder="Enter your email address">
+                  <span class="input-group-btn">
+                    <button class="btn" type="button">Submit</button>-->
+                    <form method="POST" class="post-form">{% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="save btn btn-default">Save</button>
+                    </form>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
